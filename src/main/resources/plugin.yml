@@ -1,0 +1,239 @@
+name: DuckyPunishment
+version: '1.0'
+main: org.auth.duckyPunishment.DuckyPunishment
+api-version: '1.21'
+commands:
+  ban:
+    description: Ban a player permanently or temporarily
+    usage: /ban <player> [duration] [reason]
+    permission: duckypunishment.ban
+    aliases: [pban, punishban]
+
+  tempban:
+    description: Temporarily ban a player
+    usage: /tempban <player> <duration> [reason]
+    permission: duckypunishment.ban
+    aliases: [tban]
+
+  unban:
+    description: Unban a player
+    usage: /unban <player> [reason]
+    permission: duckypunishment.unban
+    aliases: [pardon]
+
+  mute:
+    description: Mute a player permanently or temporarily
+    usage: /mute <player> [duration] [reason]
+    permission: duckypunishment.mute
+    aliases: [pmute]
+
+  tempmute:
+    description: Temporarily mute a player
+    usage: /tempmute <player> <duration> [reason]
+    permission: duckypunishment.mute
+    aliases: [tmute]
+
+  unmute:
+    description: Unmute a player
+    usage: /unmute <player> [reason]
+    permission: duckypunishment.unmute
+
+  kick:
+    description: Kick a player from the server
+    usage: /kick <player> [reason] [-s]
+    permission: duckypunishment.kick
+
+  warn:
+    description: Warn a player
+    usage: /warn <player> [reason] [-s]
+    permission: duckypunishment.warn
+    aliases: [warning, w]
+
+  ipban:
+    description: Ban an IP address
+    usage: /ipban <player|ip> [duration] [reason] [-s]
+    permission: duckypunishment.ipban
+    aliases: [banip]
+
+  ipunban:
+    description: Unban an IP address
+    usage: /ipunban <ip>
+    permission: duckypunishment.ipban
+    aliases: [unbanip]
+
+  ipmute:
+    description: Mute an IP address
+    usage: /ipmute <player|ip> [duration] [reason] [-s]
+    permission: duckypunishment.ipmute
+    aliases: [muteip]
+
+  ipunmute:
+    description: Unmute an IP address
+    usage: /ipunmute <ip>
+    permission: duckypunishment.ipmute
+    aliases: [unmuteip]
+
+  history:
+    description: View a player's punishment history
+    usage: /history <player>
+    permission: duckypunishment.history
+    aliases: [punishhistory, ph, checkhistory]
+
+  punish:
+    description: Open punishment GUI for a player
+    usage: /punish <player>
+    permission: duckypunishment.punish
+    aliases: [p, pun]
+
+  alts:
+    description: Check for alternate accounts
+    usage: /alts <player>
+    permission: duckypunishment.alts
+    aliases: [checkalts, alts]
+
+  duckyreload:
+    description: Reload the plugin configuration
+    usage: /duckyreload
+    permission: duckypunishment.reload
+    aliases: [dpreload]
+
+  punishmentclear:
+    description: Clear punishments for a player
+    usage: /punishmentclear <player> [type|all]
+    permission: duckypunishment.clear
+    aliases: [pclear, clearpunishments]
+
+  clearpunishment:
+    description: Clear a specific punishment by ID
+    usage: /clearpunishment <type> <id>
+    permission: duckypunishment.clear
+    aliases: [clearp]
+
+  checkstaff:
+    description: View punishments issued by a staff member
+    usage: /checkstaff <staff_name>
+    permission: duckypunishment.checkstaff
+    aliases: [staffcheck, staffhistory]
+
+  duckyhelp:
+    description: View all DuckyPunishment commands
+    usage: /duckyhelp [page]
+    permission: duckypunishment.help
+    aliases: [dphelp, punishhelp]
+
+  cpunishment:
+    description: Check a player's current punishment status
+    usage: /cpunishment <player>
+    permission: duckypunishment.check
+    aliases: [checkpunishment, cp, pcheck]
+
+permissions:
+  duckypunishment.*:
+    description: Gives access to all DuckyPunishment commands
+    children:
+      duckypunishment.ban: true
+      duckypunishment.unban: true
+      duckypunishment.mute: true
+      duckypunishment.unmute: true
+      duckypunishment.kick: true
+      duckypunishment.warn: true
+      duckypunishment.ipban: true
+      duckypunishment.ipmute: true
+      duckypunishment.history: true
+      duckypunishment.alts: true
+      duckypunishment.notify: true
+      duckypunishment.punish: true
+      duckypunishment.reload: true
+      duckypunishment.clear: true
+      duckypunishment.checkstaff: true
+      duckypunishment.help: true
+      duckypunishment.check: true
+
+  duckypunishment.ban:
+    description: Allows banning players
+    default: op
+
+  duckypunishment.unban:
+    description: Allows unbanning players
+    default: op
+
+  duckypunishment.mute:
+    description: Allows muting players
+    default: op
+
+  duckypunishment.unmute:
+    description: Allows unmuting players
+    default: op
+
+  duckypunishment.kick:
+    description: Allows kicking players
+    default: op
+
+  duckypunishment.warn:
+    description: Allows warning players
+    default: op
+
+  duckypunishment.ipban:
+    description: Allows IP banning
+    default: op
+
+  duckypunishment.ipmute:
+    description: Allows IP muting
+    default: op
+
+  duckypunishment.history:
+    description: Allows viewing punishment history
+    default: op
+
+  duckypunishment.alts:
+    description: Allows checking for alternate accounts
+    default: op
+
+  duckypunishment.notify:
+    description: Receive notifications about punishments
+    default: op
+
+  duckypunishment.punish:
+    description: Allows using the punishment GUI
+    default: op
+
+  duckypunishment.reload:
+    description: Allows reloading the plugin
+    default: op
+
+  duckypunishment.clear:
+    description: Allows clearing punishments
+    default: op
+
+  duckypunishment.checkstaff:
+    description: Allows checking staff activity
+    default: op
+
+  duckypunishment.help:
+    description: Allows viewing help pages
+    default: true
+
+  duckypunishment.check:
+    description: Allows checking player punishment status
+    default: op
+
+  # Hierarchy Permissions (higher number = higher rank)
+  duckypunishment.hierarchy.owner:
+    description: Owner rank (level 100)
+    default: false
+
+  duckypunishment.hierarchy.admin:
+    description: Admin rank (level 80)
+    default: false
+
+  duckypunishment.hierarchy.moderator:
+    description: Moderator rank (level 60)
+    default: false
+
+  duckypunishment.hierarchy.helper:
+    description: Helper rank (level 40)
+    default: false
+
+  duckypunishment.hierarchy.staff:
+    description: Staff rank (level 20)
+    default: false

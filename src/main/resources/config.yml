@@ -1,0 +1,66 @@
+# DuckyPunishment Configuration File
+# A comprehensive punishment management system
+
+# Database Configuration
+database:
+  host: "localhost"
+  port: "3306"
+  database: "duckypunishment"
+  username: "root"
+  password: "password"
+
+# Plugin Settings
+settings:
+  # Broadcast punishments to staff members
+  broadcast-punishments: true
+
+  # Sync punishments across multiple servers (requires BungeeCord/Velocity)
+  sync-across-servers: false
+
+  # Prevent muted players from using messaging commands
+  prevent-muted-commands: true
+
+  # Enable hierarchy system (prevents lower ranks from punishing higher ranks)
+  hierarchy-enabled: true
+
+# Web Server Configuration
+webserver:
+  # Enable/disable the web interface
+  enabled: true
+
+  # Port for the web interface
+  port: 8080
+
+# Message Configuration
+messages:
+  # Permission Messages
+  no-permission: "&cYou don't have permission to execute this command!"
+
+  # Default Reasons
+  default-ban-reason: "Banned by an operator"
+  default-mute-reason: "Muted by an operator"
+  default-kick-reason: "Kicked by an operator"
+  default-warn-reason: "Warned by an operator"
+
+  # Notification Messages
+  ban-notification: "&c%player% &7has been banned by &c%issuer% &7for &e%duration% &7- &f%reason%"
+  mute-notification: "&e%player% &7has been muted by &e%issuer% &7for &e%duration% &7- &f%reason%"
+  kick-notification: "&6%player% &7has been kicked by &6%issuer% &7- &f%reason%"
+  warn-notification: "&d%player% &7has been warned by &d%issuer% &7- &f%reason% &7(ID: %id%)"
+  unban-notification: "&a%player% &7has been unbanned by &a%issuer% &7- &f%reason%"
+  unmute-notification: "&a%player% &7has been unmuted by &a%issuer% &7- &f%reason%"
+
+  # Player Messages
+  player-muted: "&cYou are muted! Remaining time: %time%"
+
+  # Appeal Website
+  appeal-website: "https://yourserver.com/appeal"
+
+# Duration Format Examples:
+# s = seconds (e.g., 30s = 30 seconds)
+# m = minutes (e.g., 15m = 15 minutes)
+# h = hours (e.g., 6h = 6 hours)
+# d = days (e.g., 7d = 7 days)
+# w = weeks (e.g., 2w = 2 weeks)
+# y = years (e.g., 1y = 1 year)
+# perm/permanent = permanent punishment
