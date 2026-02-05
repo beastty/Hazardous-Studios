@@ -50,12 +50,32 @@ int main() {
         }
 
 
-        case 3:
-            cout << "This is algo 3" << endl;
+        case 3: {
+            int num;
+            int sum = 0;
+            float ave;
+
+            cout << "Enter your first numbers: ";
+            for (int i = 0; i < 10; i++) {
+                cin >> num;
+                sum += num;
+
+                ave = sum/10.00;
+            }
+            cout << "The sum of all your numbers is: " << sum << endl;
+            cout << "The average number is: " << ave << endl;
+        }
             break;
 
-        case 4:
-            cout << "This is algo 4" << endl;
+        case 4: {
+    int num;
+            cout << "Please pick a number to repeat: " << endl;
+            cin >> num;
+
+            for (int i=1; i<=num; i++) {
+            }
+            cout << num;
+        }
             break;
 
         case 5:
@@ -69,7 +89,7 @@ int main() {
         default:
             cout << "Invalid selection! Please choose 1-6." << endl;
             break;
-    }
+    } // THIS bracket closes the switch
 
     return 0;
 }
