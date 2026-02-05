@@ -69,7 +69,7 @@ int main() {
         default:
             cout << "Invalid selection! Please choose 1-6." << endl;
             break;
-    } // THIS bracket closes the switch
+    }
 
     return 0;
 }
