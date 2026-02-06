@@ -1,30 +1,16 @@
 #include <iostream>
+#include <string>
 using namespace std;
-
+void number();
 int main() {
     int algro;
 
-    cout << "Please select an algorithm you want to test (1-6): " << endl;
+    cout << "Please select an algorithm you want to test (1-7): " << endl;
     cin >> algro;
 
     switch (algro) {
         case 1: {
-            int a, b;
-            cout << "Please enter your first number: " << endl;
-            cin >> a;
-            cout << "Please enter your second number: " << endl;
-            cin >> b;
-
-            bool isEqual = (a == b);
-            bool isSmaller = (a < b);
-
-            if (isEqual) {
-                cout << "The numbers are equal to each other!" << endl;
-            } else if (isSmaller) {
-                cout << "Your first number is smaller!" << endl;
-            } else {
-                cout << "The first number is larger!" << endl;
-            }
+         void number();
             break;
         }
 
@@ -79,17 +65,84 @@ int main() {
             break;
 
         case 5:
-            cout << "This is algo 5" << endl;
+            int num;
+            cout << "Please pick a number: " << endl;
+            cin >> num;
+
+            for (int i =1; i <= num; i++) {
+                if (i%3 == 0 && i % 5 == 0) {
+                    cout << "FizzBuzz";
+                } else if (i%3 == 0) {
+                    cout << "Fizz";
+                } else if (i % 5 == 0) {
+
+                    cout << "Buzz";
+                } else {
+                    cout << i << " ";
+                }
+            }
+
             break;
 
-        case 6:
-            cout << "This is algo 6" << endl;
+        case 6: {
+            string response;
+            cout << "Do you love fixing error's in your 10 thousand line code without any real explanation of the error? (yes/no): ";
+            getline(cin, response);
+
+            if (response.compare("yes") ==0 ) {
+                cout << "You are insane or just really love fixing code that breaks!" << endl;
+
+            } else if (response.compare("no") == 0) {
+                cout << "Honestly who does like fixing code?" << endl;
+            } else {
+                cout << "Please say yes or no to the question :( " << endl;
+            }
+
+
+        }
+
             break;
 
+        case 7: {
+            string s1, s2;
+            cout << "\n Enter first sentence: ";
+            cin.clear();
+            fflush(stdin);
+            getline(cin, s1);
+            cout << "Enter second sentence: ";
+            getline(cin, s2);
+
+            string combined = s1 + " " + s2;
+            cout << "\m Joined sentences: " << combined << endl;
+
+        }
+break;
         default:
-            cout << "Invalid selection! Please choose 1-6." << endl;
+            cout << "Invalid selection! Please choose 1-7." << endl;
             break;
     } // THIS bracket closes the switch
 
+
     return 0;
+}
+
+
+
+void number() {
+    int a, b;
+    cout << "Please enter your first number: " << endl;
+    cin >> a;
+    cout << "Please enter your second number: " << endl;
+    cin >> b;
+
+    bool isEqual = (a == b);
+    bool isSmaller = (a < b);
+
+    if (isEqual) {
+        cout << "The numbers are equal to each other!" << endl;
+    } else if (isSmaller) {
+        cout << "Your first number is smaller!" << endl;
+    } else {
+        cout << "The first number is larger!" << endl;
+    }
 }
