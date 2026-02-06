@@ -10,7 +10,7 @@ int main() {
 
     switch (algro) {
         case 1: {
-         void number();
+          number();
             break;
         }
 
