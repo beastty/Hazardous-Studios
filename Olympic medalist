@@ -1,0 +1,65 @@
+#include <iostream>
+
+using namespace std;
+void distancemedalist();
+void timemedalist();
+// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+int main() {
+
+     skiJumpWinner = distancemedalist();
+    timemedalist();
+
+
+    return 0;
+    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+}
+
+string distanceMedalist() {
+    string name1,name2;
+    float distance1, distance2;
+
+    cout << "What is the name of your first competer?: " << endl;
+    cin >> name1;
+    cout << "How far did they go?: " << endl;
+    cin >> distance1;
+
+    cout << "What is the name of your second competeor?: " << endl;
+    cin >> name2;
+    cout << "How far did they go?: " << endl;
+    cin >> distance2;
+
+    if (distance1 > distance2) {
+        return name1;
+        cout << name1 << " is the olympic champion" << endl;
+    } else if (distance1 < distance1) {
+        return name2;
+        cout << name2 << " is the olympic chaption" << endl;
+    } else if (distance1 == distance2) {
+        return "TIE";
+        cout << name1 << " tied with " << name2 << " for the championship ";
+    }
+}
+
+string timeMedalist() {
+    string name1,name2;
+    float distance1, distance2;
+
+    cout << "What is the name of your first competer?: " << endl;
+    cin >> name1;
+    cout << "How long did they take to go 100m?: " << endl;
+    cin >> distance1;
+
+    cout << "What is the name of your second competeor?: " << endl;
+    cin >> name2;
+    cout << "How long did they take to go 100m?: " << endl;
+    cin >> distance2;
+
+    if (distance1 < distance2) {
+        cout << name1 << " is the olympic champion" << endl;
+    } else if (distance1 > distance1) {
+        cout << name2 << " is the olympic chaption" << endl;
+    } else if (distance1 == distance2) {
+        cout << name1 << " tied with " << name2 << " for the championship ";
+    }
+}
+
