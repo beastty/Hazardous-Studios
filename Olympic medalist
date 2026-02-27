@@ -1,23 +1,31 @@
 #include <iostream>
 
 using namespace std;
-void distancemedalist();
-void timemedalist();
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+string distanceMedalist();
+string timeMedalist();
+double getave();
+
 int main() {
 
-     skiJumpWinner = distancemedalist();
-    timemedalist();
+    string skiJumpWinner = distanceMedalist();
+    cout << "The Ski Jump Champion is: " << skiJumpWinner << endl;
+
+    string sprintWinner = timeMedalist();
+    cout << "The Ski Jump Champion is: " << sprintWinner << endl;
+
+    double avg = getave();
+    cout << "The average of the three values is: " << avg << endl;
 
 
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+
 }
 
 string distanceMedalist() {
     string name1,name2;
-    float distance1, distance2;
+    double distance1, distance2;
 
+    cout << "------ Ski Jump Distance -----" << endl;
     cout << "What is the name of your first competer?: " << endl;
     cin >> name1;
     cout << "How far did they go?: " << endl;
@@ -30,36 +38,48 @@ string distanceMedalist() {
 
     if (distance1 > distance2) {
         return name1;
-        cout << name1 << " is the olympic champion" << endl;
-    } else if (distance1 < distance1) {
+
+    } else if (distance1 < distance2) {
         return name2;
-        cout << name2 << " is the olympic chaption" << endl;
     } else if (distance1 == distance2) {
         return "TIE";
-        cout << name1 << " tied with " << name2 << " for the championship ";
     }
 }
 
 string timeMedalist() {
     string name1,name2;
-    float distance1, distance2;
-
+    double time1, time2;
+    cout << "----Speed Skating=----" << endl;
     cout << "What is the name of your first competer?: " << endl;
     cin >> name1;
     cout << "How long did they take to go 100m?: " << endl;
-    cin >> distance1;
+    cin >> time1;
 
     cout << "What is the name of your second competeor?: " << endl;
     cin >> name2;
     cout << "How long did they take to go 100m?: " << endl;
-    cin >> distance2;
+    cin >> time2;
 
-    if (distance1 < distance2) {
-        cout << name1 << " is the olympic champion" << endl;
-    } else if (distance1 > distance1) {
-        cout << name2 << " is the olympic chaption" << endl;
-    } else if (distance1 == distance2) {
-        cout << name1 << " tied with " << name2 << " for the championship ";
+    if (time1 < time2) {
+        return name1;
+    } else if (time2 > time1) {
+        return name1;
+    } else if (time1 > time2) {
+        return name2;
+
     }
+
 }
 
+double getave() {
+    double v1, v2, v3;
+
+    cout << "-----Average Calc-----" << endl;
+    cout << "Enter value 1: ";
+    cin >> v1;
+    cout << "Enter value 2: ";
+    cin >> v2;
+    cout << "Enter value 3: ";
+    cin >> v3;
+    return (v1 + v2 + v3) / 3.0;
+}
