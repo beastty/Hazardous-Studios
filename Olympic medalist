@@ -21,6 +21,11 @@ int main() {
 
 }
 
+
+// This function asks the user for the names of two ski jump competitors
+// and the distance each competitor jumped. It compares the distances
+// and returns the name of the competitor who jumped farther.
+// If both competitors jump the same distance, it returns "TIE".
 string distanceMedalist() {
     string name1,name2;
     double distance1, distance2;
@@ -44,8 +49,13 @@ string distanceMedalist() {
     } else if (distance1 == distance2) {
         return "TIE";
     }
-}
+} // end of function distanceMedalist
 
+
+
+// This function asks the user for the names of two speed skating competitors
+// and the time each competitor took to complete a 100m race. It compares
+// the times and returns the name of the competitor with the fastest time.
 string timeMedalist() {
     string name1,name2;
     double time1, time2;
@@ -69,7 +79,10 @@ string timeMedalist() {
 
     }
 
-}
+} // end of function timeMedalist
+
+// This function prompts the user to enter three numbers.
+// It then calculates and returns the average of those numbers.
 
 double getave() {
     double v1, v2, v3;
@@ -82,4 +95,4 @@ double getave() {
     cout << "Enter value 3: ";
     cin >> v3;
     return (v1 + v2 + v3) / 3.0;
-}
+} // end of function getave
